@@ -60,8 +60,6 @@ section:after
 
 }
 
-
-
 #text
 {
     position: relative;
@@ -74,3 +72,4 @@ section:after
 {
     z-index: 2;
 }
+
