@@ -28,6 +28,29 @@ ul li
     list-style: none;
 }
 
+ul li:before 
+{
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 6em;
+    font-weight: 700;
+    pointer-events: none;
+    opacity: 0;
+    letter-spacing: 20px;
+    transition: 0.5s;
+    white-space: nowrap;
+}
+
+ul li:hover:before 
+{
+    opacity: 0.05;
+    letter-spacing: 0px;
+}
+
 ul li a 
 {
     position: relative;
@@ -62,9 +85,19 @@ ul li a:before
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
+    left: -100px;
     width: 80px;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+    transform: skewX(35deg);
+    transform: 0s;
+
+}
+
+ul li a:hover:before
+{
+    left: calc(100% + 100px);
+    transition: 0.5s;
+    transition-delay: 0.2s;
 
 }
